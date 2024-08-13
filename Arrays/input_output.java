@@ -8,7 +8,6 @@ public class input_output {
         marks[0]=sc.nextInt();
         marks[1]=sc.nextInt();
         marks[2]=sc.nextInt();
-        marks[3]=sc.nextInt();
         System.out.println(marks[0]+ " "+marks[1]);
         marks[0]=5;
         System.out.println(marks[0]+ " "+marks[1]);
