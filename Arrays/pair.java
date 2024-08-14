@@ -20,7 +20,7 @@ public class pair {
             }
             System.out.println();
         }
-        //O(n3)
+        //TC ==> O(n3)
     }
     public static int maxSubarrSum(int[] arr){
         //Brute Force
