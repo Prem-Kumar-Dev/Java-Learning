@@ -41,7 +41,10 @@ public class pair {
         }
         return maxSum;
         //TC ==> O(n3)
+
     }
+
+
     public static void main(String[] args) {
         int[] arr = {2,4,6,-88,10};
         subarr(arr);
