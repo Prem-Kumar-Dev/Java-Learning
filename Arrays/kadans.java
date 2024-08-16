@@ -11,7 +11,7 @@ public class kadans {
 
         }
         System.out.println(ms);
-        //TC ==>O(n)
+        //TC ==>O(n)::
 
 
     }
