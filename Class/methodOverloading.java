@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class functionOverloading {
+public class methodOverloading {
 
     public static int multiply(int a, int b) {
         return a * b;
