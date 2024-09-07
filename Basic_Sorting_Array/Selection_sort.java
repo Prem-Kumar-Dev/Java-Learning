@@ -10,14 +10,21 @@ public class Selection_sort {
         System.out.println();
     }
     public static void main(String[] args) {
-        int[] arr = {15, 14, 35, 20,2};
+        int arr[]={10,2,3,68,4,6};
         for (int i = 0; i < arr.length-1; i++) {
-            for (int j = i; j < arr.length-1-i; j++) {
-                if
-
+            int minPos=i;
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[j]<arr[minPos]) {
+                    minPos = j;
                 }
 
             }
+            //swap values
+            int temp=arr[minPos];
+            arr[minPos]=arr[i];
+            arr[i]=temp;
+
         }
+        printArray(arr);
     }
 }
