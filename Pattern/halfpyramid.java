@@ -11,7 +11,7 @@ public class halfpyramid {
 
         for(int i=1; i<=lines;i++){
             for(int j=1;j<=i;j++){
-                System.out.print(j);  //change ch to j for numbers:
+                System.out.print(ch);  //change ch to j for numbers:
             }
             System.out.println();
         }

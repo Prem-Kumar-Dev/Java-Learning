@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class leapyear {
+public class leapyear2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int year = sc.nextInt();
