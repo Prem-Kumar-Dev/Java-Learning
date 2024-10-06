@@ -21,7 +21,6 @@ public class TwoDArray {
             }
             System.out.println();
         }
-        System.out.println();
     }
 
     public static int[][] addTwoDArray(int[][] arr1, int[][] arr2) {
@@ -46,15 +45,19 @@ public class TwoDArray {
         return sub;
     }
 
-    public static int[][] mulTwoDArray(int[][] arr1, int[][] arr2) {
-        int pro[][]=new int[arr1.length][arr1[0].length];
-        System.out.println("Product:");
-        for (int i = 0; i < arr1.length; i++) {
-            for (int j = 0; j < arr1[i].length; j++) {
-                pro[i][j]=arr1[i][j]*arr2[i][j];
+
+    public static int[][] mulTwoDArray(int[][] A, int[][] B) {
+        int[][] C = new int[A.length][A[0].length];
+        System.out.println("Multiplication:");
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[0].length; j++) {
+                for (int k = 0; k < A[0].length; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
+                }
             }
+
         }
-        return pro;
+        return C;
     }
 
 
@@ -81,4 +84,5 @@ public class TwoDArray {
 
     }
 }
+
 
