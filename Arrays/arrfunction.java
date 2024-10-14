@@ -1,5 +1,3 @@
-
-
 public class arrfunction {
     public static void update(int marks[], int nonChangable){
         nonChangable=10;
