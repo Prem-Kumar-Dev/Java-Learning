@@ -210,7 +210,9 @@ public class LL {
         return slow;
     }
     public boolean isPelindrome_LL(){
-
+        if (head==null || head.next==null){
+            return true;
+        }
         //step1 - find mid
         Node midNode = findMid();
         //step2 - reverse 2nd half
