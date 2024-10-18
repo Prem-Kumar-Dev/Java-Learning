@@ -96,11 +96,11 @@ public class LL {
             size = 0;
             tail = head = null;
         }
-        int i=0;
+        int i=1;
         Node temp= head;
 
         //going to previous of tail
-        while (i<size-1-1){
+        while (i<size-1){
             temp = temp.next;
             i++;
         }
@@ -177,6 +177,68 @@ public class LL {
         }
         head = prev; //-> b/c after everything the curr or head becomes null so we store pev value to head
     }
+
+    public void remove_nth_fromLast(int index){
+        if (index == 1){
+            removeLast();
+            return;
+        }
+        if (index == size){
+            removeFirst();
+            return;
+        }
+
+        int i=1;
+        Node temp = head;
+        while (i<size-index){
+            temp = temp.next;
+            i++;
+        }
+        temp.next = temp.next.next;
+
+
+    }
+    //Slow-Fast approch
+    public Node findMid(){
+        Node slow = head;
+        Node fast = head;
+        int mid = 0;
+        while( fast!=null && fast.next!=null){
+            fast=fast.next.next;//+2
+            slow=slow.next;//+1
+        }
+        return slow;
+    }
+    public boolean isPelindrome_LL(){
+
+        //step1 - find mid
+        Node midNode = findMid();
+        //step2 - reverse 2nd half
+        //entire block of code is for reversing
+        Node prev=null;
+        Node curr=midNode;
+        Node next;
+        while (curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        Node right = prev; //reiht half head since curr becomes null the prev is holding the last/first node.
+        Node left = head;
+
+        //step3 - checj 1st and 2nd half
+        while (right !=null){ //left!=null is not necc b/c the right become null first.(has less node to triverse)
+            if (left.data!= right.data){
+                return false;
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
+
+
+    }
     public static void printLL(){
         Node temp = head;
         while (temp != null){
@@ -185,6 +247,7 @@ public class LL {
         }
         System.out.println("null");
     }
+
 
     public static void main(String[] args) {
         LL ll = new LL();
@@ -199,9 +262,22 @@ public class LL {
         System.out.println("Iteration:"+ll.search_Iterative_Linear(4));
         System.out.println("Recurssion:"+ll.search_Recursive_Linear(4));
         ll.reverseLL();
+        ll.addFirst(5);
+        ll.addFirst(6);
+        ll.addFirst(7);
+        ll.addFirst(8);
         printLL();
+        ll.remove_nth_fromLast(3);
+        printLL();
+        System.out.println(ll.findMid());
 
         System.out.println(size);
+        /*ll.addFirst(1);
+        ll.addFirst(5);
+        ll.addFirst(2);
+        ll.addFirst(1);
+        printLL();
+        System.out.println(ll.isPelindrome_LL());*/
     }
 }
 
