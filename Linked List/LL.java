@@ -241,6 +241,49 @@ public class LL {
 
 
     }
+    public boolean detectLoop(){        //Floyd's Cycle Finding
+        Node slow = head;
+        Node fast = head;
+
+        while (fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if (fast==slow){
+                return true; //cycle detected
+            }
+        }
+        return false;  //no cycle detected
+    }
+
+    public void removeLoop(){
+        boolean loop=false;
+        Node slow = head;
+        Node fast = head;
+
+        while (fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if (fast==slow){
+                loop=true;//cycle detected
+                break;
+            }
+        }
+
+        if (loop==true){
+            slow = head;
+            Node prev=null;
+
+            while (fast!=slow){
+                slow=slow.next;
+                prev=fast;
+                fast=fast.next;
+            }
+            prev.next=null;
+
+        }
+
+
+    }
     public static void printLL(){
         Node temp = head;
         while (temp != null){
@@ -253,7 +296,7 @@ public class LL {
 
     public static void main(String[] args) {
         LL ll = new LL();
-        ll.addFirst(1);
+        /*ll.addFirst(1);
         ll.addFirst(2);
         ll.addLast(3);
         ll.addLast(4);
@@ -273,13 +316,28 @@ public class LL {
         printLL();
         System.out.println(ll.findMid());
 
-        System.out.println(size);
+        System.out.println(size);*/
         /*ll.addFirst(1);
         ll.addFirst(5);
         ll.addFirst(2);
         ll.addFirst(1);
         printLL();
         System.out.println(ll.isPelindrome_LL());*/
+
+        ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(2);
+        ll.addFirst(2);
+        ll.addFirst(2);
+        ll.addFirst(2);
+        ll.addFirst(2);
+        ll.addLast(3);
+        head.next.next.next.next.next=head.next.next;
+        System.out.println(ll.detectLoop());
+        ll.removeLoop();
+        System.out.println(ll.detectLoop());
+
+
     }
 }
 
