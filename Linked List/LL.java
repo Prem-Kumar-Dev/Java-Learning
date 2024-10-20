@@ -332,6 +332,7 @@ public class LL {
         ll.addFirst(2);
         ll.addFirst(2);
         ll.addLast(3);
+        ll.addLast(3);
         head.next.next.next.next.next=head.next.next;
         System.out.println(ll.detectLoop());
         ll.removeLoop();
