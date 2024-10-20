@@ -284,6 +284,57 @@ public class LL {
 
 
     }
+    public void zigzag(){
+        Node slow = head;
+        Node fast = head;
+
+        //finding mid node
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+
+        Node curr = slow.next;
+        slow.next=null;
+        fast.next=null;
+
+        //reversing second half
+        Node next;
+        Node prev=null;
+
+        while (curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr = next;
+        }
+
+        Node right = prev;
+        Node left = head;
+        Node nextL,nextR;
+
+
+
+        while(right!=null && right!=null){
+            /*temp=right.next;
+            right.next=left.next;
+            left.next=right;
+            left=right.next;
+            right=temp;*/
+
+            nextL=left.next;
+            left.next=right;
+            nextR=right.next;
+            right.next=nextL;
+
+            left=nextL;
+            right=nextR;
+        }
+
+
+
+
+    }
     public static void printLL(){
         Node temp = head;
         while (temp != null){
@@ -317,28 +368,29 @@ public class LL {
         System.out.println(ll.findMid());
 
         System.out.println(size);*/
-        /*ll.addFirst(1);
-        ll.addFirst(5);
-        ll.addFirst(2);
+        /*ll.addFirst(3);
         ll.addFirst(1);
+        ll.addFirst(2);
+        ll.addFirst(5);
+        ll.addFirst(1);
+        ll.addFirst(3);
         printLL();
         System.out.println(ll.isPelindrome_LL());*/
 
-        ll.addFirst(1);
-        ll.addFirst(2);
-        ll.addFirst(2);
-        ll.addFirst(2);
-        ll.addFirst(2);
-        ll.addFirst(2);
-        ll.addFirst(2);
+
+        ll.addLast(1);
+        ll.addLast(2);
         ll.addLast(3);
-        ll.addLast(3);
-        head.next.next.next.next.next=head.next.next;
+        ll.addLast(4);
+        ll.addLast(5);
+        /*head.next.next.next.next.next=head.next.next;
         System.out.println(ll.detectLoop());
         ll.removeLoop();
         System.out.println(ll.detectLoop());
-
-
+*/
+        printLL();
+        ll.zigzag();
+        printLL();
     }
 }
 
