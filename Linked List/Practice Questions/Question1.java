@@ -64,6 +64,10 @@ public class Question1 {
          printLL(head2);
 
          Node intersect=ll.intersection();
-         System.out.println(intersect.data);
+         if (intersect!=null){
+             System.out.println("No Intersection present!");
+         }else{
+            System.out.println(intersect.data);
+         }
     }
 }
