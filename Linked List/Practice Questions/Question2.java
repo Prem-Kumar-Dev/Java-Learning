@@ -87,9 +87,9 @@ public class Question2 {
 
 
         Question2 ll = new Question2();
-        ll.addFirst(13);
-        ll.addFirst(12);
-        ll.addFirst(11);
+//        ll.addFirst(13);
+//        ll.addFirst(12);
+//        ll.addFirst(11);
         ll.addFirst(10);
         ll.addFirst(9);
         ll.addFirst(8);
@@ -101,7 +101,7 @@ public class Question2 {
         ll.addFirst(2);
         ll.addFirst(1);
         printLL();
-        ll.removeMfromN(2,2);
+        ll.removeMfromN(2,3);
         printLL();
 
 
