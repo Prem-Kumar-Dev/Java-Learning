@@ -1,6 +1,5 @@
 //delete m numbers of node after n node;
 
-import java.util.Scanner;
 
 public class Question2 {
 
@@ -28,6 +27,45 @@ public class Question2 {
 
     }
 
+    public void removeMfromN(int m,int n){
+        //treverse to the nth node;
+        Node N = head;
+        Node M = head;
+
+        while(M!=null && N.next!=null) {
+
+
+            for (int i = 1; i <= n - 1; i++) {
+                N = N.next;
+                int p=i;
+            }
+
+            if (N==null){
+                break;
+            }
+
+            M = N.next; //node to be removed
+            //checking if m no of node exist after n to remove;
+            Node temp = N;
+            for (int k=1;k<=m && temp.next!=null;k++){
+                temp=temp.next;
+            }
+            //removing m number of nodes
+            for (int j = 1; j <= m && M!=null; j++) {
+
+
+                    N.next = M.next;
+                    M = M.next;
+                    int p=j;
+
+
+            }
+            if(N.next!=null){
+                N=N.next;
+            }
+        }
+    }
+
     public static void printLL(){
         if (head==null){
             System.out.println("Empty LL!");
@@ -42,50 +80,16 @@ public class Question2 {
     }
 
 
-    public void removeMfromN(int m, int n){
-        Node temp=head;
 
-
-        while(temp!=null) {
-            //treversing to n number node:
-            int count=1;
-            while (count != n && temp!=null) {
-                if(temp==null){
-                    return;
-                }
-
-                temp = temp.next;
-                count++;
-            }
-            if (temp==null){
-                return;
-            }
-            count = 0;
-            //same as removal from mid but added counter;
-            while (count != m && temp!=null) {
-                if (temp == head) {
-                    head = head.next;
-                } else{
-                    temp.next = temp.next.next;
-                }
-                count++;
-
-
-            }
-            temp=temp.next;
-        }
-        }
 
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
 
-        System.out.println("Enter value of M:");
-        int m = sc.nextInt();
 
-        System.out.println("Enter value of N:");
-        int n = sc.nextInt();
 
         Question2 ll = new Question2();
+        ll.addFirst(13);
+        ll.addFirst(12);
+        ll.addFirst(11);
         ll.addFirst(10);
         ll.addFirst(9);
         ll.addFirst(8);
@@ -97,7 +101,7 @@ public class Question2 {
         ll.addFirst(2);
         ll.addFirst(1);
         printLL();
-        ll.removeMfromN(m,n);
+        ll.removeMfromN(2,2);
         printLL();
 
 
