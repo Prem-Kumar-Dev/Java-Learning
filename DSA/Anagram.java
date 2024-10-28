@@ -17,6 +17,7 @@ public class Anagram {
                     hm.remove(c);
                 }
                 else{
+
                     hm.put(c,hm.get(c)-1);
                 }
             }
