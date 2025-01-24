@@ -1,34 +1,54 @@
-import java.util.Scanner;
-public class test {
-    public static int binarySearch(int[] arr, int key) {
-        int low = 0;
-        int high = arr.length - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (arr[mid] == key) {
-                return mid;
-            } else if (arr[mid] < key) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
+//{ Driver Code Starts
+// Initial Template for Java
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.util.Arrays;
+
+
+class test {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            String st = sc.next();
+
+            char ans = new Solution().nonRepeatingChar(st);
+
+            if (ans != '$')
+                System.out.println(ans);
+            else
+                System.out.println(-1);
+
+            System.out.println("~");
+        }
+    }
+}
+
+// } Driver Code Ends
+
+
+// User function Template for Java
+
+class Solution {
+    // Function to find the first non-repeating character in a string.
+    static char nonRepeatingChar(String s) {
+        int[] arr = new int[26];
+        Arrays.fill(arr, -1);
+        char[] st = s.toCharArray();
+        for (int i=0; i<st.length;i++){
+            int temp= (int)st[i];
+            if(arr[97-temp]==-1){
+                arr[97-temp]=i;
+            }else{
+                arr[97-temp]+=1;
             }
         }
-        return -1;
-    }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the number of elements in the array: ");
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        System.out.println("Enter " + n + " sorted elements:");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+        for (int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
         }
-        System.out.print("Enter the element to search: ");
-        int key = sc.nextInt();
-        int result = binarySearch(arr, key);
-        System.out.println("Element found at index: " + result);
-
-        sc.close();
+        return 's';
     }
 }

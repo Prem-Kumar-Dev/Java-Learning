@@ -6,6 +6,7 @@ public class constructorOver {
 
         Student s2=new Student(s1);
         System.out.println(s2.name);
+
     }
 }
 

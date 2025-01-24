@@ -17,6 +17,6 @@ class arrayL extends Thread{
         arr.add(3);
         arr.add(4);
         arr.set(0,5);
-        System.out.println(arr.get(0));
+        System.out.println(arr);
     }
-        }
+}

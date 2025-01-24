@@ -226,7 +226,7 @@ public class LL {
             prev=curr;
             curr=next;
         }
-        Node right = prev; //reiht half head since curr becomes null the prev is holding the last/first node.
+        Node right = prev; //right half head since curr becomes null the prev is holding the last/first node.
         Node left = head;
 
         //step3 - checj 1st and 2nd half
