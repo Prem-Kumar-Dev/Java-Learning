@@ -12,9 +12,3 @@ public class Array {
     public static void main(String[] args) {
         int[] arr = new int[10];
         arr = assign(arr,0,1);
-        for(int n:arr){
-            System.out.print(n+" ");
-        }
-        System.out.println();
-    }
-}

@@ -11,6 +11,6 @@ public class FriendsParing {
         return ways;
     }
     public static void main(String[] args) {
-        System.out.println(pair(3));
+        System.out.println(pair(3)); qqqqqqqqqq q System.out.println(d  s22tr2r22hhhttt2r`      );
     }
 }
